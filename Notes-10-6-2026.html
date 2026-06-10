@@ -1,0 +1,156 @@
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบแบบคัดกรองและประเมินสุขภาพจิตและพฤติกรรม</title>
+    <style>
+        body { font-family: 'Sarabun', Arial, sans-serif; background-color: #f0f4f8; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; background: white; margin: 20px auto; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h1, h2, h3 { text-align: center; color: #1a365d; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .menu-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .menu-card:hover { border-color: #3182ce; background: #ebf8ff; transform: translateY(-2px); }
+        .menu-card h3 { margin-top: 0; color: #2b6cb0; }
+        .form-section { display: none; margin-top: 20px; }
+        .btn-back { background: #718096; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 20px; }
+        .btn-back:hover { background: #4a5568; }
+        .question-block { margin-bottom: 25px; padding: 15px; background: #f8fafc; border-left: 4px solid #4299e1; border-radius: 0 8px 8px 0; }
+        .question-title { font-weight: bold; color: #2d3748; margin-bottom: 12px; }
+        .options-list { display: flex; flex-direction: column; gap: 10px; }
+        label { display: flex; align-items: center; background: white; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+        label:hover { background: #edf2f7; }
+        input[type="radio"], input[type="checkbox"] { margin-right: 12px; transform: scale(1.2); }
+        .sub-question { margin-top: 15px; padding: 15px; background: #edf2f7; border-radius: 8px; display: none; }
+        button.btn-submit { display: block; width: 100%; background: #3182ce; color: white; border: none; padding: 15px; font-size: 18px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 30px; }
+        button.btn-submit:hover { background: #2b6cb0; }
+        .result-box { display: none; margin-top: 30px; padding: 25px; border-radius: 12px; background: #ebf8ff; border: 2px solid #bee3f8; }
+        .badge { display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; color: white; margin-top: 5px; }
+        .treatment-info { background: white; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 15px; }
+        .info-tag { font-size: 12px; color: gray; text-align: center; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- หน้าหลัก: เลือกแบบประเมิน -->
+    <div id="mainMenu">
+        <h1>ระบบประมวลผลแบบคัดกรองด้านสุขภาพ</h1>
+        <p class="info-tag">* ระบบนี้เป็นแบบประเมินตนเองอัตโนมัติ ไม่มีการระบุชื่อหรือจัดเก็บข้อมูลส่วนบุคคลของผู้ใช้งาน *</p>
+        <div class="menu-grid">
+            <div class="menu-card" onclick="openForm('drugForm')">
+                <h3>📋 บคก.กสธ. V.2</h3>
+                <p>แบบคัดกรองและส่งต่อผู้ป่วยที่ใช้ยาและสารเสพติดเพื่อรับการบำบัดรักษา</p>
+            </div>
+            <div class="menu-card" onclick="openForm('alcoholForm')">
+                <h3>🍺 แบบประเมินแอลกอฮอล์</h3>
+                <p>แบบประเมินพฤติกรรมการดื่มเครื่องดื่มแอลกอฮอล์ของผู้มารับบริการสุขภาพ</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 1. ฟอร์ม บคก.กสธ. V.2 ==================== -->
+    <div id="drugForm" class="form-section">
+        <button class="btn-back" onclick="goBack()">⬅ กลับหน้าหลัก</button>
+        <h2>แบบคัดกรองและส่งต่อผู้ป่วยที่ใช้ยาและสารเสพติด (บคก.กสธ.) V.2</h2>
+        
+        <div class="question-block">
+            <div class="question-title">ระบุยาและสารเสพติดหลักที่ใช้ใน 3 เดือนที่ผ่านมา (ตอบได้มากกว่า 1 ข้อ):</div>
+            <div class="options-list">
+                <label><input type="checkbox" name="drug_type" value="ยาบ้า"> ยาบ้า</label>
+                <label><input type="checkbox" name="drug_type" value="ไอซ์"> ไอซ์</label>
+                <label><input type="checkbox" name="drug_type" value="กัญชา"> กัญชา</label>
+                <label><input type="checkbox" name="drug_type" value="กระท่อม"> กระท่อม</label>
+                <label><input type="checkbox" name="drug_type" value="เฮโรอีน"> เฮโรอีน</label>
+                <label><input type="checkbox" name="drug_type" value="อื่น ๆ"> อื่น ๆ (ยาอี, สารระเหย, ฝิ่น, ยานอนหลับ)</label>
+            </div>
+        </div>
+
+        <!-- ข้อ 1-6 -->
+        <div class="question-block">
+            <div class="question-title">1. คุณใช้สารเสพติดเหล่านั้นบ่อยเพียงใดในช่วง 3 เดือนที่ผ่านมา?</div>
+            <div class="options-list">
+                <label><input type="radio" name="d1" value="0" checked> ไม่เคย (0 คะแนน)</label>
+                <label><input type="radio" name="d1" value="2"> เพียง (1-2 ครั้ง) (2 คะแนน)</label>
+                <label><input type="radio" name="d1" value="3"> เดือนละ (1-3 ครั้ง) (3 คะแนน)</label>
+                <label><input type="radio" name="d1" value="4"> สัปดาห์ละ (1-4 ครั้ง) (4 คะแนน)</label>
+                <label><input type="radio" name="d1" value="6"> เกือบทุกวัน (สัปดาห์ละ 5-7 วัน) (6 คะแนน)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">2. คุณมีความต้องการ หรือมีความรู้สึกอยากใช้สารเสพติดจนทนไม่ได้บ่อยเพียงใด?</div>
+            <div class="options-list">
+                <label><input type="radio" name="d2" value="0" checked> ไม่เคย (0 คะแนน)</label>
+                <label><input type="radio" name="d2" value="3"> เพียง (1-2 ครั้ง) (3 คะแนน)</label>
+                <label><input type="radio" name="d2" value="4"> เดือนละ (1-3 ครั้ง) (4 คะแนน)</label>
+                <label><input type="radio" name="d2" value="5"> สัปดาห์ละ (1-4 ครั้ง) (5 คะแนน)</label>
+                <label><input type="radio" name="d2" value="6"> เกือบทุกวัน (สัปดาห์ละ 5-7 วัน) (6 คะแนน)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">3. การใช้สารเสพติดทำให้คุณเกิดปัญหาสุขภาพ ครอบครัว สังคม กฎหมาย หรือการเงินบ่อยเพียงใด?</div>
+            <div class="options-list">
+                <label><input type="radio" name="d3" value="0" checked> ไม่เคย (0 คะแนน)</label>
+                <label><input type="radio" name="d3" value="4"> เพียง (1-2 ครั้ง) (4 คะแนน)</label>
+                <label><input type="radio" name="d3" value="5"> เดือนละ (1-3 ครั้ง) (5 คะแนน)</label>
+                <label><input type="radio" name="d3" value="6"> สัปดาห์ละ (1-4 ครั้ง) (6 คะแนน)</label>
+                <label><input type="radio" name="d3" value="7"> เกือบทุกวัน (สัปดาห์ละ 5-7 วัน) (7 คะแนน)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">4. การใช้สารเสพติดทำให้คุณไม่สามารถรับผิดชอบ หรือทำกิจกรรมที่คุณเคยทำตามปกติได้บ่อยเพียงใด?</div>
+            <div class="options-list">
+                <label><input type="radio" name="d4" value="0" checked> ไม่เคย (0 คะแนน)</label>
+                <label><input type="radio" name="d4" value="5"> เพียง (1-2 ครั้ง) (5 คะแนน)</label>
+                <label><input type="radio" name="d4" value="6"> เดือนละ (1-3 ครั้ง) (6 คะแนน)</label>
+                <label><input type="radio" name="d4" value="7"> สัปดาห์ละ (1-4 ครั้ง) (7 คะแนน)</label>
+                <label><input type="radio" name="d4" value="8"> เกือบทุกวัน (สัปดาห์ละ 5-7 วัน) (8 คะแนน)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">5. ญาติ เพื่อน หรือคนที่รู้จักเคยว่ากล่าวตักเตือน วิพากษ์วิจารณ์ จับผิด หรือแสดงท่าทีสงสัยว่าคุณเกี่ยวข้องกับการใช้สารเสพติดหรือไม่?</div>
+            <div class="options-list">
+                <label><input type="radio" name="d5" value="0" checked> ไม่เคย (0 คะแนน)</label>
+                <label><input type="radio" name="d5" value="3"> เคยแต่ก่อน 3 เดือนที่ผ่านมา (3 คะแนน)</label>
+                <label><input type="radio" name="d5" value="6"> เคยในช่วง 3 เดือนที่ผ่านมา (6 คะแนน)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">6. คุณเคยลด หรือหยุดใช้สารเสพติด แต่ไม่ประสบผลสำเร็จ หรือไม่?</div>
+            <div class="options-list">
+                <label><input type="radio" name="d6" value="0" checked> ไม่เคย (0 คะแนน)</label>
+                <label><input type="radio" name="d6" value="3"> เคยแต่ก่อน 3 เดือนที่ผ่านมา (3 คะแนน)</label>
+                <label><input type="radio" name="d6" value="6"> เคยในช่วง 3 เดือนที่ผ่านมา (6 คะแนน)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">คำถามเพิ่มเติมความเสี่ยง: คุณเคยใช้สารเสพติดชนิดฉีดหรือไม่?</div>
+            <div class="options-list">
+                <label><input type="radio" name="inject" value="no" checked onclick="toggleSubDrug(false)"> ไม่เคย</label>
+                <label><input type="radio" name="inject" value="yes" onclick="toggleSubDrug(true)"> เคย</label>
+            </div>
+            <div id="subInjectQuestion" class="sub-question">
+                <div class="question-title" style="color: #c53030;">หากเคย: ภายใน 3 เดือนที่ผ่านมา คุณใช้บ่อยเพียงใด?</div>
+                <div class="options-list">
+                    <label><input type="radio" name="inject_freq" value="low" checked> 1 ครั้งต่อสัปดาห์ หรือน้อยกว่า 3 วันติดต่อกัน</label>
+                    <label><input type="radio" name="inject_freq" value="high"> มากกว่า 1 ครั้งต่อสัปดาห์ หรือมากกว่า 3 วันติดต่อกัน</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-submit" onclick="processDrugScore()">📊 ประมวลผลคะแนนสารเสพติด</button>
+    </div>
+
+    <!-- ==================== 2
+</pre>
+        </body>
+    </html>
