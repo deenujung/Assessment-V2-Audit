@@ -1,7 +1,4 @@
-<html>
-        <head><title>Downloaded HTML</title></head>
-        <body>
-            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -16,14 +13,14 @@
         .menu-card:hover { border-color: #3182ce; background: #ebf8ff; transform: translateY(-2px); }
         .menu-card h3 { margin-top: 0; color: #2b6cb0; }
         .form-section { display: none; margin-top: 20px; }
-        .btn-back { background: #718096; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 20px; }
+        .btn-back { background: #718096; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 20px; display: inline-block; }
         .btn-back:hover { background: #4a5568; }
         .question-block { margin-bottom: 25px; padding: 15px; background: #f8fafc; border-left: 4px solid #4299e1; border-radius: 0 8px 8px 0; }
         .question-title { font-weight: bold; color: #2d3748; margin-bottom: 12px; }
         .options-list { display: flex; flex-direction: column; gap: 10px; }
         label { display: flex; align-items: center; background: white; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; transition: 0.2s; }
         label:hover { background: #edf2f7; }
-        input[type="radio"], input[type="checkbox"] { margin-right: 12px; transform: scale(1.2); }
+        input[type="radio"], input[type="checkbox"] { margin-right: 12px; transform: scale(1.2); cursor: pointer; }
         .sub-question { margin-top: 15px; padding: 15px; background: #edf2f7; border-radius: 8px; display: none; }
         button.btn-submit { display: block; width: 100%; background: #3182ce; color: white; border: none; padding: 15px; font-size: 18px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 30px; }
         button.btn-submit:hover { background: #2b6cb0; }
@@ -41,11 +38,11 @@
         <h1>ระบบประมวลผลแบบคัดกรองด้านสุขภาพ</h1>
         <p class="info-tag">* ระบบนี้เป็นแบบประเมินตนเองอัตโนมัติ ไม่มีการระบุชื่อหรือจัดเก็บข้อมูลส่วนบุคคลของผู้ใช้งาน *</p>
         <div class="menu-grid">
-            <div class="menu-card" onclick="openForm('drugForm')">
+            <div class="menu-card" id="btnDrugForm">
                 <h3>📋 บคก.กสธ. V.2</h3>
                 <p>แบบคัดกรองและส่งต่อผู้ป่วยที่ใช้ยาและสารเสพติดเพื่อรับการบำบัดรักษา</p>
             </div>
-            <div class="menu-card" onclick="openForm('alcoholForm')">
+            <div class="menu-card" id="btnAlcoholForm">
                 <h3>🍺 แบบประเมินแอลกอฮอล์</h3>
                 <p>แบบประเมินพฤติกรรมการดื่มเครื่องดื่มแอลกอฮอล์ของผู้มารับบริการสุขภาพ</p>
             </div>
@@ -54,7 +51,7 @@
 
     <!-- ==================== 1. ฟอร์ม บคก.กสธ. V.2 ==================== -->
     <div id="drugForm" class="form-section">
-        <button class="btn-back" onclick="goBack()">⬅ กลับหน้าหลัก</button>
+        <button class="btn-back btn-go-home">⬅ กลับหน้าหลัก</button>
         <h2>แบบคัดกรองและส่งต่อผู้ป่วยที่ใช้ยาและสารเสพติด (บคก.กสธ.) V.2</h2>
         
         <div class="question-block">
@@ -135,8 +132,8 @@
         <div class="question-block">
             <div class="question-title">คำถามเพิ่มเติมความเสี่ยง: คุณเคยใช้สารเสพติดชนิดฉีดหรือไม่?</div>
             <div class="options-list">
-                <label><input type="radio" name="inject" value="no" checked onclick="toggleSubDrug(false)"> ไม่เคย</label>
-                <label><input type="radio" name="inject" value="yes" onclick="toggleSubDrug(true)"> เคย</label>
+                <label><input type="radio" name="inject" value="no" checked id="injectNo"> ไม่เคย</label>
+                <label><input type="radio" name="inject" value="yes" id="injectYes"> เคย</label>
             </div>
             <div id="subInjectQuestion" class="sub-question">
                 <div class="question-title" style="color: #c53030;">หากเคย: ภายใน 3 เดือนที่ผ่านมา คุณใช้บ่อยเพียงใด?</div>
@@ -147,10 +144,7 @@
             </div>
         </div>
 
-        <button class="btn-submit" onclick="processDrugScore()">📊 ประมวลผลคะแนนสารเสพติด</button>
+        <button class="btn-submit" id="submitDrug">📊 ประมวลผลคะแนนสารเสพติด</button>
     </div>
 
-    <!-- ==================== 2
-</pre>
-        </body>
-    </html>
+    <!-- ==================== 2. ฟอร์ม แบบประเมินแอลกอฮอล์ ============
